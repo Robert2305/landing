@@ -12,7 +12,6 @@ jobs:
       'self-hosted',
       'landing'
     ]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
