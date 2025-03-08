@@ -13,7 +13,6 @@ jobs:
       'landing'
     ]
     if: github.event.pull_request.merged == false
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
