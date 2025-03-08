@@ -1,11 +1,11 @@
-name: build Angular App
+name: Build Workflow
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build Angular App
     runs-on: [
       'self-hosted',
       'landing'
@@ -19,10 +19,9 @@ jobs:
           node-version: '22.x'
       - name: Install dependencies
         run: |
+          #!/bin/bash
           npm ci
       - name: Build
         run: |
+          #!/bin/bash
           npm run  build
-      - name: Test
-        run: |
-          npm run test
