@@ -1,0 +1,48 @@
+name: Tag on Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  tag:
+    if: github.event.pull_request.merged == true
+    runs-on: [
+      'self-hosted',
+      'landing'
+    ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch all tags
+        run: git fetch --tags
+
+      - name: Determine new tag
+        id: new_tag
+        run: |
+          # Get the latest tag
+          latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          if [ -z "$latest_tag" ]; then
+            new_tag="1.0.0"
+          else
+            # Split the tag into parts
+            IFS='.' read -r -a parts <<< "$latest_tag"
+            major=${parts[0]}
+            minor=${parts[1]}
+            patch=${parts[2]}
+
+            # Increment the patch version
+            patch=$((patch + 1))
+
+            # Form the new tag
+            new_tag="$major.$minor.$patch"
+          fi
+          echo "New tag: $new_tag"
+          echo "::set-output name=tag::$new_tag"
+
+      - name: Create new tag
+        run: |
+          git tag ${{ steps.new_tag.outputs.tag }}
+          git push origin ${{ steps.new_tag.outputs.tag }}
