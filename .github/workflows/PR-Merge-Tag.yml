@@ -43,7 +43,7 @@ jobs:
           echo "::set-output name=tag::$new_tag"
 
       - name: Create new tag
-        env:
+        with:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         run: |
           git tag ${{ steps.new_tag.outputs.tag }}
