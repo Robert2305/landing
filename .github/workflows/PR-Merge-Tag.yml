@@ -42,8 +42,9 @@ jobs:
           echo "New tag: $new_tag"
           echo "::set-output name=tag::$new_tag"
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-        github_token: ${{ secrets.PAT }}
-        branch: ${{ github.ref }}
+      - name: Create new tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: |
+          git tag ${{ steps.new_tag.outputs.tag }}
+          git push origin ${{ steps.new_tag.outputs.tag }}
