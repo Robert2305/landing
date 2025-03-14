@@ -1,0 +1,18 @@
+name: deploy-angular.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Angular App
+    runs-on: [
+      'self-hosted',
+      'landing'
+    ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name:
+        run: |
+          #!/bin/bash
+          bash .github/workflows/run.sh
