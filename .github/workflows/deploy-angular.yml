@@ -5,10 +5,7 @@ on:
 jobs:
   deploy:
     name: Deploy Angular App
-    runs-on: [
-      'self-hosted',
-      'landing'
-    ]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
