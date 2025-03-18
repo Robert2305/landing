@@ -1,4 +1,5 @@
 #!/bin/bash
-npm install -g @angular/cli
 npm install
-ng build --prod
+npm audit fix
+export PATH=./node_modules/.bin:$PATH
+ng build --configuration production
