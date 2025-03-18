@@ -1,6 +1,3 @@
 #!/bin/bash
-env
-ls
-pwd
-id
-
+npm install
+ng build --prod
