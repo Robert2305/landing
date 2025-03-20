@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Environment=NODE_PORT=3001
 Type=simple
-User=ubuntu
+User=github_agent
 ExecStart=echo 4lock
 Restart=on-failure
 
