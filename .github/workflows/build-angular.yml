@@ -9,8 +9,7 @@ jobs:
   build:
     name: Build Angular App
     runs-on: [
-      'self-hosted',
-      'landing'
+      '111'
     ]
     steps:
       - name: Checkout

@@ -9,8 +9,7 @@ jobs:
   tag:
     if: github.event.pull_request.merged == true
     runs-on: [
-      'self-hosted',
-      'landing'
+      '111',
     ]
     steps:
       - name: Checkout repository
