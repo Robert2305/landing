@@ -10,7 +10,7 @@ After=network.target
 Environment=NODE_PORT=3001
 Type=simple
 User=github_agent
-ExecStart=npm run start
+ExecStart=echo 4lock
 Restart=on-failure
 
 [Install]
