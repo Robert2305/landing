@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        clean: 'true'
       - name: install
         run: |
           #!/bin/bash

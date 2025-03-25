@@ -10,7 +10,7 @@ After=network.target
 Environment=NODE_PORT=3001
 Type=simple
 User=root
-WorkingDirectory=/path/to/actions-runner/_work/landing/landing/
+WorkingDirectory=/actions-runner/_work/landing/landing/
 ExecStart=/usr/bin/npm run start
 Restart=on-failure
 
