@@ -18,10 +18,6 @@ jobs:
         run: |
           #!/bin/bash
           npm run build
-      - name: start
-        run: |
-          #!/bin/bash
-          npm run start
       - name:
         run: |
           #!/bin/bash
