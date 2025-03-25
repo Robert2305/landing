@@ -9,8 +9,8 @@ After=network.target
 [Service]
 Environment=NODE_PORT=3001
 Type=simple
-User=github_agent
-ExecStart=sudo cd actions-runner/_work/landing/landing/ && pwd && ls -la && sudo npm run start
+User=root
+ExecStart=cd actions-runner/_work/landing/landing/ && pwd && ls -la && npm run start
 Restart=on-failure
 
 [Install]
