@@ -10,7 +10,8 @@ After=network.target
 Environment=NODE_PORT=3001
 Type=simple
 User=root
-ExecStart=cd actions-runner/_work/landing/landing/ && pwd && ls -la && npm run start
+WorkingDirectory=/path/to/actions-runner/_work/landing/landing/
+ExecStart=/usr/bin/npm run start
 Restart=on-failure
 
 [Install]
