@@ -10,6 +10,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: install
+        run: |
+          #!/bin/bash
+            npm install
+      - name: build
+        run: |
+          #!/bin/bash
+          npm run build
+      - name: start
+        run: |
+          #!/bin/bash
+          npm run start
       - name:
         run: |
           #!/bin/bash
