@@ -9,7 +9,7 @@ After=network.target
 [Service]
 Environment=NODE_PORT=3001
 Type=simple
-User=root
+User=github_agent
 WorkingDirectory=/actions-runner/_work/landing/landing/
 ExecStart=/usr/bin/npm run start
 Restart=on-failure
