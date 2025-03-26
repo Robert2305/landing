@@ -11,7 +11,7 @@ Environment=NODE_PORT=3001
 Type=simple
 User=github_agent
 WorkingDirectory=/actions-runner/_work/landing/landing/
-ExecStart=/usr/bin/npm run start
+ExecStart=npm run start
 Restart=on-failure
 
 [Install]
