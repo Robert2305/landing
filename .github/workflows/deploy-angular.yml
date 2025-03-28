@@ -1,6 +1,6 @@
 name: deploy-angular.yml
 on:
-  workflow_disptach:
+  workflow_dispatch:
 
 jobs:
   deploy:
