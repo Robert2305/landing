@@ -1,9 +1,6 @@
 name: deploy-angular.yml
 on:
-  workflows_run:
-    workflows: ["Tag on Merge"]
-    types:
-      - completed
+  workflow_disptach:
 
 jobs:
   deploy:
