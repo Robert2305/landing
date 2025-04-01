@@ -18,6 +18,11 @@ jobs:
         run: |
           #!/bin/bash
           npm run build
+      - name: file replication
+        run: |
+          #!/bin/bash
+          sudo mkdir -p /home/landing_backup
+          sudo rsync -avz --progress /home/github_agent/actions-runner/_work/landing/landing/ /home/landing_backup
       - name:
         run: |
           #!/bin/bash
