@@ -11,8 +11,8 @@ After=network.target
 Environment=NODE_PORT=3001
 Type=simple
 User=root
-WorkingDirectory=/home/landing_runtime
-ExecStart=npm run start -- --host 0.0.0.0
+WorkingDirectory=/home/github_agent/landing_runtime
+ExecStart=cd /home/github_agent/landing_runtime && npm run start -- --host 0.0.0.0
 Restart=on-failure
 
 [Install]
