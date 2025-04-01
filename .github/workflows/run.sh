@@ -1,10 +1,5 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/github_agent/actions-runner/_work/landing/landing/"
-DEST_DIR="/lib/landing_backup"
-sudo mkdir -p $DEST_DIR
-sudo rsync -avz --progress $SOURCE_DIR $DEST_DIR
-
 # Create the app.service file dynamically
 sudo bash -c 'cat > /usr/lib/systemd/system/app.service <<EOF
 [Unit]
