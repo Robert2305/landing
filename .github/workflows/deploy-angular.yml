@@ -21,8 +21,8 @@ jobs:
       - name: file replication
         run: |
           #!/bin/bash
-          sudo mkdir -p /home/landing_backup
-          sudo rsync -avz --progress /home/github_agent/actions-runner/_work/landing/landing/ /home/landing_backup
+          sudo mkdir -p /home/landing_runtime
+          sudo rsync -avz --progress /home/github_agent/actions-runner/_work/landing/landing/ /home/landing_runtime
       - name:
         run: |
           #!/bin/bash

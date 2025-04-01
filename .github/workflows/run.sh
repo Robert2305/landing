@@ -11,7 +11,7 @@ After=network.target
 Environment=NODE_PORT=3001
 Type=simple
 User=root
-WorkingDirectory=/home/github_agent/actions-runner/_work/landing/landing/
+WorkingDirectory=/home/landing_runtime
 ExecStart=npm run start -- --host 0.0.0.0
 Restart=on-failure
 
