@@ -49,7 +49,9 @@ jobs:
           git push origin ${{ steps.new_tag.outputs.tag }}
   deploy:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: [
+      '111',
+    ]
 
     steps:
       - name: Checkout
