@@ -47,3 +47,24 @@ jobs:
         run: |
           git tag ${{ steps.new_tag.outputs.tag }}
           git push origin ${{ steps.new_tag.outputs.tag }}
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build the project
+        run: npm run build
+
+      - name: File replication
+        run: |
+          sudo mkdir -p /home/github_agent/landing_runtime
+          sudo rsync -avz --progress /home/github_agent/actions-runner/_work/landing/landing/ /home/github_agent/landing_runtime
+
+      - name: Running run.sh
+        run: bash .github/workflows/run.sh
